@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('submit-btn');
 
     const WHATSAPP_LINK = "https://whatsapp.com/channel/0029Vb7P1Yw6WaKhRmK6rJ3T";
-    const GAS_URL = "https://script.google.com/macros/s/AKfycbyKoPtPcUxcmf3cvDEB3d8z3JTYF75ndT-4yNgcbdhRrt8BWLvWRuwBRIkP-jOOlvcb/exec";
+    const GAS_URL = "https://script.google.com/macros/s/AKfycbymaaRwUtn1CJkWOlgZfoFDxxRwffPv0GRKvG4C42JQ7xKUoBCAGZvfnMEhP7vd4A8A/exec";
 
     /**
      * TOGGLE PAYMENT SECTION
@@ -51,10 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function validateForm() {
         const isMember = document.querySelector('input[name="membership"]:checked')?.value;
         const name = document.getElementById('full-name').value;
-        const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
+        const age = document.getElementById('age').value;
+        const gender = document.getElementById('gender').value;
         
-        let isValid = name && email && phone && isMember;
+        let isValid = name && phone && age && gender && isMember;
 
         if (isMember === 'no') {
             isValid = isValid && fileInput.files.length > 0;

@@ -27,34 +27,43 @@
                 <div class="form-container">
                     <div class="input-grid">
                         <div class="field">
-                            <label for="full-name">Full Name</label>
+                            <label for="full-name">Name</label>
                             <input type="text" id="full-name" name="full-name" placeholder="YOUR NAME" required>
                         </div>
                         <div class="field">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="EMAIL ADDRESS" required>
+                            <label for="phone">Phone No.</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" required>
                         </div>
                         <div class="field">
-                            <label for="phone">WhatsApp Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" required>
+                            <label for="age">Age</label>
+                            <input type="number" id="age" name="age" placeholder="YOUR AGE" min="1" max="100" required>
+                        </div>
+                        <div class="field">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="" disabled selected>SELECT GENDER</option>
+                                <option value="male">MALE</option>
+                                <option value="female">FEMALE</option>
+                                <option value="other">OTHER</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="membership-toggle">
-                        <p class="toggle-label">Are you already a member?</p>
+                        <p class="toggle-label">Are you an outsider or already a member?</p>
                         <div class="radio-options">
                             <label class="option-card">
                                 <input type="radio" name="membership" value="yes" required>
                                 <span class="card-ui">
                                     <span class="status">MEMBER</span>
-                                    <span class="desc">I have active access</span>
+                                    <span class="desc">I have already joined</span>
                                 </span>
                             </label>
                             <label class="option-card">
                                 <input type="radio" name="membership" value="no" required>
                                 <span class="card-ui">
                                     <span class="status">OUTSIDER</span>
-                                    <span class="desc">Newcomer / Non-member</span>
+                                    <span class="desc">I am a newcomer</span>
                                 </span>
                             </label>
                         </div>
@@ -64,17 +73,44 @@
                 <!-- Section 2: Payment (Dynamic) -->
                 <section id="payment-step" class="payment-step hidden">
                     <div class="qr-showcase">
-                        <div class="qr-container">
-                            <div class="qr-header">
-                                <h2 class="qr-title">SCAN TO PAY</h2>
-                                <p class="qr-desc">Secure your spot in the community</p>
+                        <div class="qr-container icici-card">
+                            <div class="card-header">
+                                <div class="icici-brand">
+                                    <div class="icici-logo-pill">
+                                        <span class="i-box">i</span> ICICI Bank
+                                    </div>
+                                </div>
+                                <h3 class="merchant-name">M/S. ALPHA FITNESS GYM</h3>
                             </div>
+                            
                             <div class="qr-box">
-                                <img src="qr-code.png" alt="WhatsApp Channel QR" class="qr-image">
+                                <img src="qr-code.png" alt="Payment QR" class="qr-image">
                                 <div class="qr-scan-line"></div>
                             </div>
-                            <div class="qr-footer">
-                                <p class="upi-text">msalphafitnessgym.eazypay@icici</p>
+                            
+                            <div class="card-footer">
+                                <div class="upi-info">
+                                    <span class="upi-label">UPI ID:</span>
+                                    <span class="upi-id">msalphafitnessgym.eazypay@icici</span>
+                                </div>
+                                
+                                <div class="partner-logos">
+                                    <div class="logo-row main-upi">
+                                        <span class="bhim-logo">BHIM</span>
+                                        <span class="divider">|</span>
+                                        <span class="upi-logo">UPI</span>
+                                    </div>
+                                    <div class="logo-row-separator"></div>
+                                    <div class="logo-row apps">
+                                        <span>iMobile</span>
+                                        <span class="dot">|</span>
+                                        <span>G Pay</span>
+                                        <span class="dot">|</span>
+                                        <span>e₹</span>
+                                        <span class="dot">|</span>
+                                        <span>CRED</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

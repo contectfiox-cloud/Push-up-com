@@ -109,7 +109,8 @@ body {
     letter-spacing: 0.15em;
 }
 
-.field input {
+.field input,
+.field select {
     background: transparent;
     border: none;
     border-bottom: 2px solid var(--border);
@@ -118,12 +119,29 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     transition: all 0.3s var(--transition);
+    border-radius: 0;
+    appearance: none;
 }
 
-.field input:focus {
+.field select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 1.2rem;
+    padding-right: 2rem;
+}
+
+.field input:focus,
+.field select:focus {
     outline: none;
     border-bottom-color: var(--accent-red);
     box-shadow: 0 10px 20px -10px rgba(255, 0, 0, 0.2);
+}
+
+.field select option {
+    background: var(--card-bg);
+    color: var(--text-white);
 }
 
 /* Membership Toggle */
@@ -189,78 +207,126 @@ body {
     gap: 2.5rem;
 }
 
-.qr-container {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 2.5rem;
+/* ICICI Card UI */
+.icici-card {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 2.5rem 1.5rem;
+    color: #000000;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
     text-align: center;
-    transition: all 0.5s var(--transition);
     position: relative;
     overflow: hidden;
-}
-
-.qr-header {
-    margin-bottom: 2rem;
-}
-
-.qr-title {
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 0.2rem;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-}
-
-.qr-desc {
-    font-size: 0.9rem;
-    color: var(--text-white);
-    opacity: 0.8;
-}
-
-.qr-box {
-    position: relative;
-    background: white;
-    padding: 1.5rem;
-    border-radius: 16px;
     margin: 0 auto;
-    width: fit-content;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-}
-
-.qr-image {
-    width: 200px;
-    height: 200px;
-    display: block;
-}
-
-.qr-scan-line {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 2px;
-    background: var(--accent-red);
-    box-shadow: 0 0 10px var(--accent-red);
-    animation: scan 3s linear infinite;
 }
 
-@keyframes scan {
-    0% { top: 0; }
-    50% { top: 100%; }
-    100% { top: 0; }
+.icici-brand {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.75rem;
 }
 
-.qr-footer {
-    margin-top: 1.5rem;
+.icici-logo-pill {
+    background: linear-gradient(90deg, #f26522, #ed1c24);
+    color: white;
+    padding: 0.6rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(242, 101, 34, 0.3);
 }
 
-.upi-text {
-    font-size: 0.7rem;
+.i-box {
+    background: white;
+    color: #ed1c24;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.merchant-name {
+    font-size: 1rem;
     font-weight: 600;
-    color: var(--text-dim);
+    color: #27272a;
+    margin-bottom: 2rem;
     letter-spacing: 0.05rem;
+}
+
+.icici-card .qr-box {
+    background: #ffffff;
+    box-shadow: none;
+    border: 1px solid #f1f1f1;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.icici-card .qr-image {
+    width: 100%;
+    max-width: 220px;
+}
+
+.upi-info {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #71717a;
+}
+
+.upi-id {
+    color: #404040;
+}
+
+.partner-logos {
+    margin-top: 2.5rem;
+    border-top: 1px solid #f1f1f1;
+    padding-top: 1.5rem;
+}
+
+.logo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    color: #71717a;
+    font-weight: 700;
+}
+
+.main-upi {
+    font-size: 1.1rem;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.logo-row-separator {
+    height: 1rem;
+}
+
+.apps {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    gap: 0.5rem;
+}
+
+.dot {
+    opacity: 0.3;
+}
+
+.icici-card .qr-scan-line {
+    background: #f26522;
+    box-shadow: 0 0 10px #f26522;
 }
 
 /* Form Actions */
