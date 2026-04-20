@@ -82,7 +82,107 @@ body {
     color: var(--text-dim);
 }
 
-/* QR Showcase */
+/* Form Layout */
+.onboarding-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.input-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.field label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.field input {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border);
+    padding: 0.75rem 0;
+    color: var(--text-white);
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s var(--transition);
+}
+
+.field input:focus {
+    outline: none;
+    border-bottom-color: var(--accent-red);
+    box-shadow: 0 10px 20px -10px rgba(255, 0, 0, 0.2);
+}
+
+/* Membership Toggle */
+.membership-toggle {
+    margin-top: 2rem;
+}
+
+.toggle-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+}
+
+.radio-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.option-card {
+    cursor: pointer;
+    position: relative;
+}
+
+.option-card input {
+    position: absolute;
+    opacity: 0;
+}
+
+.card-ui {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: all 0.3s var(--transition);
+}
+
+.option-card input:checked + .card-ui {
+    border-color: var(--accent-red);
+    background: rgba(255, 0, 0, 0.05);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+}
+
+.status {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+}
+
+.desc {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+/* QR Showcase (Inside Payment Section) */
 .qr-showcase {
     display: flex;
     flex-direction: column;
@@ -163,9 +263,9 @@ body {
     letter-spacing: 0.05rem;
 }
 
-/* Action Zone */
-.action-zone {
-    text-align: center;
+/* Form Actions */
+.form-actions {
+    margin-top: 2rem;
 }
 
 .primary-btn {
@@ -178,29 +278,33 @@ body {
     background: var(--accent-red);
     color: white;
     text-decoration: none;
+    border: none; /* Add this if it's a button */
     font-size: 1rem;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.1rem;
     border-radius: 100px;
     transition: all 0.3s var(--transition);
     box-shadow: 0 10px 30px rgba(255, 0, 0, 0.2);
+    cursor: pointer;
 }
 
-.primary-btn:hover {
+.primary-btn:hover:not(:disabled) {
     background: #d30000;
     transform: translateY(-3px);
     box-shadow: 0 15px 40px rgba(255, 0, 0, 0.4);
 }
 
-.primary-btn:active {
+.primary-btn:active:not(:disabled) {
     transform: translateY(0);
 }
 
-.direct-link-hint {
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    color: var(--text-dim);
+.primary-btn:disabled {
+    background: #27272a;
+    color: #52525b;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* Legal Footer */
@@ -226,8 +330,8 @@ body {
     }
     
     .qr-image {
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
     }
 }
 
